@@ -1,16 +1,34 @@
-# React + Vite
+# Groovd
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Descubre música y podcasts, guarda lo que te gusta y escribe tus reseñas. Groovd es una app para registrar, valorar y compartir lo que escuchas (canciones, álbumes y podcasts), y descubrir contenido nuevo a partir de lo más escuchado y de las opiniones de otras personas.
 
-Currently, two official plugins are available:
+Proyecto de React (Vite + JavaScript) de la asignatura Desarrollo de Aplicaciones Móviles (DAM · CITM), curso 2026-27.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Equipo
 
-## React Compiler
+- Paula Garcia (@paulagv05)
+- Sergi Font (@sergifonte)
+- Adriana Solís (@adriana-solis)
+- Lucía Curiel (@luciacuriel)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cómo arrancarla
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Y abrir http://localhost:5173 (en Chrome, modo móvil con F12 y Ctrl+Shift+M).
+
+## Enlaces
+
+- Trello: https://trello.com/b/e3QB9uqg/dam-adriana-lucia-paula-sergi
+- Referencia: https://dam-citm-26.github.io/referencias/groovd/
+
+## Carpetas
+
+- `src/components`: componentes reutilizables (átomos, moléculas y organismos)
+- `src/pages`: una pantalla por fichero
+- `src/data`: datos de ejemplo
+- `src/utils`: funciones puras (filtrar, ordenar, calcular)
+- `docs`: modelo de datos (`datos.md`) y componentes de cada pantalla (`componentes.md`)
