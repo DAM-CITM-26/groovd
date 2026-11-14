@@ -1,4 +1,4 @@
-# Groovd · versión 1
+# Groovd 
 
 Descubre música y podcasts, guarda lo que te gusta y escribe tus reseñas. Groovd es una app para registrar, valorar y compartir lo que escuchas (canciones, álbumes y podcasts), y descubrir contenido nuevo a partir de lo más escuchado y de las opiniones de otras personas.
 
