@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CONTENIDOS } from '../data/contenidos.js'
+import CONTENIDOS from '../data/contenidos.json'
 import { masEscuchados, filtrarPorTipo } from '../utils/contenidos.js'
 import CarruselPopular from '../components/CarruselPopular.jsx'
 import ListaContenidos from '../components/ListaContenidos.jsx'
