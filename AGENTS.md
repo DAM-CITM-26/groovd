@@ -66,7 +66,7 @@ Queremos que seas un copiloto, no que nos hagas el trabajo. En la Sprint Review 
 - Si nos sale un error, explícanos qué significa y dónde mirar, pero no nos des la solución entera.
 - Nuestras props van en castellano y no se llaman como las nativas: `onCambio` y no `onChange`, `valor` y no `value`.
 - Si te pedimos el mensaje de un commit, hazlo así:
-  - Un título corto que empiece por `feat:`, `fix:`, `chore:` o `docs:`
+  - Un título corto que empiece por `feat:`, `fix:`, `docs:`, `chore:`, `style:` o `refactor:`
   - `Qué:` lo que se ha hecho
   - `Por qué:` para qué sirve
   - `Cómo:` cómo está hecho
@@ -84,3 +84,9 @@ Queremos que seas un copiloto, no que nos hagas el trabajo. En la Sprint Review 
 - **Componentes de cada pantalla:** `docs/componentes.md`
 
 ## Lo que hemos aprendido
+
+- 14/11  Los campos de `src/data/` se llaman exactamente como en `docs/datos.md`. Se nos coló `ano` en lugar de `anio`.
+- 14/11  Al quitar el ejemplo de Vite, quita también lo que lo usa: el enlace al favicon en `index.html` y el nombre del proyecto en `package.json`.
+- 14/11  Los componentes se usan como etiquetas (`<Caratula contenido={contenido} />`), no se llaman como funciones (`Caratula({ contenido })`).
+- 14/11  En JSX es `className`, no `class`, y `style` es un objeto (`style={{ background: '…' }}`), no un texto.
+- 14/11  La `key` va en el `.map()` y es el `id` del elemento, no la posición.
