@@ -18,7 +18,7 @@ export function useContenido(id) {
         const encontrado = await pedirContenido(id)
         if (activo) setContenido(encontrado)
       } catch (e) {
-        if (activo) setError(e.message)
+        if (activo) setError('No se ha podido cargar el contenido. Comprueba la conexión.')
       } finally {
         if (activo) setCargando(false)
       }
