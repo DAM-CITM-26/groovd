@@ -63,3 +63,28 @@ La lista está en `feed.entry`. Cada elemento se adapta así:
 - `escuchasSemana` desaparece: iTunes no da las escuchas. En su lugar, `puesto` (para ordenar lo más popular) y `genero`.
 - `id` pasa a ser texto, como el que llega en la dirección con `useParams`.
 - Nuevo `imagen`: la carátula de verdad.
+
+## Un contenido por su id (Sprint 2, la ficha)
+
+La ficha `/contenido/:id` pide un solo contenido con `pedirContenido(id)`:
+
+`https://itunes.apple.com/lookup?id=6819148825&country=es`
+
+Responde `{ resultCount, results: [ … ] }`. Los ids del top sirven tal cual. `adaptarDeItunes` pasa `results[0]` a nuestro modelo (es la misma forma que responde la búsqueda, `/search`):
+
+| Nuestro campo | Canción | Álbum | Podcast |
+|---|---|---|---|
+| tipo (cómo se reconoce) | `kind: 'song'` | `collectionType: 'Album'` | `kind: 'podcast'` |
+| id (texto) | `trackId` | `collectionId` | `trackId` |
+| titulo | `trackName` | `collectionName` | `trackName` |
+| artista | `artistName` | `artistName` | `artistName` |
+| anio | 4 primeros de `releaseDate` | igual | igual |
+| genero | `primaryGenreName` | igual | igual |
+| imagen | `artworkUrl100` | igual | igual |
+
+En la ficha no hay `puesto`: solo existe en el top.
+
+**Casos:**
+- El id existe → el contenido adaptado.
+- El id no existe (`resultCount: 0`) o no es un número (`abc`) → `null` → la pantalla enseña «no encontrado». Si no es un número, ni siquiera se llama a la API.
+- iTunes falla o no hay conexión → `pedirContenido` lanza un `Error` → el hook enseña el error con «Reintentar».
