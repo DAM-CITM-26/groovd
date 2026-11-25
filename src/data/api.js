@@ -57,6 +57,7 @@ function adaptarDeItunes(resultado) {
 // Un contenido por su id (el de la dirección /contenido/:id).
 // Devuelve null si no existe; lanza un Error si iTunes falla.
 export async function pedirContenido(id) {
+  if (Number.isNaN(Number(id))) return null
   const respuesta = await fetch(`${ITUNES}/lookup?id=${id}&country=es`)
   if (respuesta.status === 400) return null
   if (!respuesta.ok) throw new Error('No se ha podido cargar el contenido')
