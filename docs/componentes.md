@@ -17,7 +17,7 @@ La pantalla principal: el carrusel «Popular this week» con los 5 contenidos m�
 | PantallaInicio({ estado })               | pages/Inicio.jsx                   | Pantalla  | —                                    |
 | estado.tipo                              | useState en Inicio ('Todo')        | Estado    | baja a Chips como valor + onCambio   |
 | masEscuchados, filtrarPorTipo, escuchasCortas (js/logica.js) | utils/contenidos.js | Lógica  | —                                    |
-| CONTENIDOS (js/datos.js)                 | data/contenidos.js                 | Datos     | —                                    |
+| CONTENIDOS (js/datos.js)                 | data/contenidos.json               | Datos     | —                                    |
 | ICONO_TIPO (js/componentes.js)           | data/iconos.js                     | Datos     | —                                    |
 
 ## Cómo encajan
@@ -35,3 +35,21 @@ La pantalla principal: el carrusel «Popular this week» con los 5 contenidos m�
 3. Moléculas: TarjetaPopular, FilaContenido, Chips
 4. Organismos: CarruselPopular, ListaContenidos
 5. Pantalla: Inicio, con la lista y después el estado
+
+## Navegación (Sprint 2)
+
+Lo que comparten todas las pantallas. El árbol de rutas está en `docs/rutas.md`.
+
+| En la referencia                          | En React                          | Nivel     | Props en React |
+|-------------------------------------------|-----------------------------------|-----------|----------------|
+| `<nav class="pestanas">` (index.html)     | components/BarraPestanas.jsx      | Organismo | —              |
+| cabecera + `<main id="app">` (index.html) | pages/Layout.jsx                  | Pantalla  | —              |
+| PantallaBuscar({ estado })                | pages/Buscar.jsx (provisional)    | Pantalla  | —              |
+| PantallaContenido({ estado, id })         | pages/Contenido.jsx (provisional) | Pantalla  | — (el id, con useParams) |
+| PantallaNoEncontrada()                    | pages/NoEncontrado.jsx            | Pantalla  | —              |
+| RUTAS y el `#` de la dirección (app.js)   | App.jsx con Routes y Route        | Rutas     | —              |
+
+- Layout (cabecera + Outlet + BarraPestanas)
+  - BarraPestanas (organismo): NavLink a Inicio y Buscar
+  - Outlet: Inicio, Buscar, Contenido o NoEncontrado, según la dirección
+- NoEncontrado reutiliza Vacio (átomo) y un Link para volver al inicio
