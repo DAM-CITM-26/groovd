@@ -10,7 +10,7 @@ La app usa React Router. Todas las rutas están dentro de una ruta padre con el 
     └── <Route element={<Layout />}>    cabecera + <Outlet /> + BarraPestanas
         ├── index            →  Inicio         /
         ├── buscar           →  Buscar         /buscar
-        ├── contenido/:id    →  Contenido      /contenido/7
+        ├── contenido/:id    →  Contenido      /contenido/6819148825
         └── *                →  NoEncontrado   cualquier otra dirección
 ```
 
@@ -21,7 +21,7 @@ La app usa React Router. Todas las rutas están dentro de una ruta padre con el 
 |---|---|---|---|
 | `/` | `pages/Inicio.jsx` | Inicio | Lo más popular y la lista por tipo |
 | `/buscar` | `pages/Buscar.jsx` | Buscar | Buscador (Sprint 2, en curso) |
-| `/contenido/:id` | `pages/Contenido.jsx` | — | Ficha de un contenido; el `id` se lee con `useParams` (llega como texto) |
+| `/contenido/:id` | `pages/Contenido.jsx` | — | Ficha de un contenido; el `id` se lee con `useParams` (llega como texto). Los datos llegan con useContenido(id); si el id no existe, enseña NoEncontrado |
 | `*` | `pages/NoEncontrado.jsx` | — | «Esta página no existe.» y enlace para volver al inicio |
 
 ## Cómo se navega
