@@ -1,6 +1,5 @@
 import EtiquetaTipo from './EtiquetaTipo.jsx'
 import { ICONO_TIPO } from '../data/iconos.js'
-import { escuchasCortas } from '../utils/contenidos.js'
 
 export default function FilaContenido({ contenido }) {
   return (
@@ -11,7 +10,7 @@ export default function FilaContenido({ contenido }) {
       <div className="crece">
         <h3>{contenido.titulo}</h3>
         <p className="card-meta">
-          {contenido.artista} · {escuchasCortas(contenido.escuchasSemana)} escuchas
+          {contenido.artista} · {contenido.genero} · {contenido.anio}
         </p>
       </div>
       <EtiquetaTipo tipo={contenido.tipo} />
