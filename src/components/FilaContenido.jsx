@@ -4,7 +4,7 @@ import { ICONO_TIPO } from '../data/iconos.js'
 export default function FilaContenido({ contenido }) {
   return (
     <li>
-      <span className="avatar" style={{ background: 'var(--color-primario)' }}>
+      <span className="avatar fondo-primario">
         {ICONO_TIPO[contenido.tipo]}
       </span>
       <div className="crece">
