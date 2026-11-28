@@ -3,9 +3,6 @@
 // Vienen de js/logica.js de la referencia.
 
 // Copia ordenada de más a menos escuchas, y solo las n primeras
-export function masEscuchados(contenidos, n) {
-  return [...contenidos].sort((a, b) => b.escuchasSemana - a.escuchasSemana).slice(0, n)
-}
 
 export function masPopulares(contenidos, n) {
   return [...contenidos].sort((a, b) => a.puesto - b.puesto).slice(0, n)
@@ -15,9 +12,4 @@ export function masPopulares(contenidos, n) {
 export function filtrarPorTipo(contenidos, tipo) {
   if (tipo === 'Todo') return contenidos
   return contenidos.filter((contenido) => contenido.tipo === tipo)
-}
-
-// 182000 → '182 mil'
-export function escuchasCortas(numero) {
-  return `${Math.round(numero / 1000)} mil`
 }
